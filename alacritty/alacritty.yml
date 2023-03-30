@@ -1,0 +1,111 @@
+window:
+  padding:
+    x: 10
+    y: 10
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 0.9
+  class:
+    instance: Terminal
+    general: Terminal
+
+  #decorations_theme_variant: None
+
+scrolling:
+  history: 1000
+  multiplier: 5
+
+font:
+  normal:
+    family: "Jetbrains Mono Nerd Font"
+    # The `style` can be specified to pick a specific face.
+    style: Regular
+  bold:
+    family: "Jetbrains Mono Nerd Font"
+    style: Bold
+  italic:
+    family: "Jetbrains Mono Nerd Font"
+    style: Italic
+  bold_italic:
+    family: "Jetbrains Mono Nerd Font"
+    style: Bold Italic
+  size: 11.0
+
+  #builtin_box_drawing: true
+
+draw_bold_text_with_bright_colors: false
+
+colors:
+  primary:
+    background: "#3B4252"
+    foreground: "#d8dee9"
+    dim_foreground: "#a5abb6"
+  cursor:
+    text: "#3B4252"
+    cursor: "#d8dee9"
+  vi_mode_cursor:
+    text: "#3B4252"
+    cursor: "#d8dee9"
+  selection:
+    text: CellForeground
+    background: "#4c566a"
+  search:
+    matches:
+      foreground: CellBackground
+      background: "#88c0d0"
+    colors.footer_bar:
+      background: "#434c5e"
+      foreground: "#d8dee9"
+  normal:
+    black: "#3b4252"
+    red: "#bf616a"
+    green: "#a3be8c"
+    yellow: "#ebcb8b"
+    blue: "#81a1c1"
+    magenta: "#b48ead"
+    cyan: "#88c0d0"
+    white: "#e5e9f0"
+  bright:
+    black: "#4c566a"
+    red: "#bf616a"
+    green: "#a3be8c"
+    yellow: "#ebcb8b"
+    blue: "#81a1c1"
+    magenta: "#b48ead"
+    cyan: "#8fbcbb"
+    white: "#eceff4"
+  dim:
+    black: "#373e4d"
+    red: "#94545d"
+    green: "#809575"
+    yellow: "#b29e75"
+    blue: "#68809a"
+    magenta: "#8c738c"
+    cyan: "#6d96a5"
+    white: "#aeb3bb"
+
+  transparent_background_colors: true
+
+bell:
+  animation: EaseOut
+  duration: 0
+  color: '#d79921'
+
+selection:
+  # This string contains all characters that are used as separators for words
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: false
+
+cursor:
+  style:
+    shape: Beam
+    blinking: Off
+  thickness: 0.15
+
+live_config_reload: true
+
+mouse:
+  # Threshold for how long to wait for followup clicks
+  #double_click: { threshold: 300 }
+  #triple_click: { threshold: 300 }
+  hide_when_typing: true

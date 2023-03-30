@@ -1,0 +1,12 @@
+#!/bin/bash
+
+MOBILE=/home/james/.config/hypr/hyprland-mobile.conf
+
+if [[ -f "$MOBILE" ]]; then
+  mv hyprland.conf hyprland-docked.conf
+  mv hyprland-mobile.conf hyprland.conf
+fi
+
+hyprpaper &
+waybar &
+mako

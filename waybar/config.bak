@@ -1,0 +1,91 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "modules-left": [ "clock", "battery"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [ "cpu", "backlight", "pulseaudio", "bluetooth", "network", "tray"],
+
+    // Modules configuration
+    "bluetooth": {
+        "format": "",
+	"format-icons": "",
+        "on-click": "GTK_THEME=Nordic blueman-manager"
+    },    
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": [""],
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true
+    },
+    "tray": {
+        //"icon-size": 11,
+        "spacing": 5
+    },
+    "battery": {
+        "format": "<span font='JetBrains Mono Nerd Font 11'>{icon}</span>  {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "format-charging": "<span font='JetBrains Mono Nerd Font'></span>  <span font='JetBrains Mono Nerd Font 11'>{icon}</span>  {capacity}% {time}",
+        "format-full": "<span font='Jetbrains Mono Nerd Font'></span>  <span font='Jetbrains Mono Nerd Font 11'>{icon}</span>  Charged",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false,
+    },
+    "clock": {
+        "format": "{:%H:%M <span font='JetBrains Mono Nerd Font 11'> </span> %e %b <span font='JetBrains Mono Nerd Font 11'> </span>}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "today-format": "<b>{}</b>",
+    },
+    "cpu": {
+        "interval": "1",      
+        "format": "{max_frequency}GHz <span color=\"darkgray\">| {usage}%</span>",
+        "max-length": 13,
+        "min-length": 5,
+        "on-click": "alacritty -e btop",
+        "tooltip": false
+    },
+    "temperature": {
+        //"thermal-zone": 1,
+        "interval": "4",
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "critical-threshold": 74,
+        "format-critical": "  {temperatureC}°C",
+        "format": "{icon}  {temperatureC}°C",
+        "format-icons": ["", "", ""],
+        "max-length": 7,
+        "min-length": 7
+    },
+    "network": {
+        // "interface": "wlan0", // (Optional) To force the use of this interface,
+        "format": "{icon}",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": "No Internet",
+        "format-wifi": "{essid}",
+        "family": "ipv4",
+        "tooltip-format-wifi": "{ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}",
+        "on-click": "gnome-control-center wifi"
+    },
+    "pulseaudio": {
+        "scroll-step": 3, // %, can be a float
+        "format": "{volume}% <span font='JetBrains Mono Nerd Font 11'>{icon}</span> <span font='JetBrains Mono Nerd Font 11'>{format_source}</span>",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [" ", " ", " "]
+        },
+        "on-click": "GTK_THEME=Nordic pavucontrol",
+    }    
+}
