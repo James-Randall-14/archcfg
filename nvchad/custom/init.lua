@@ -6,3 +6,5 @@
 --   command = "tabdo wincmd =",
 -- })
 -- Neovim Settings
+vim.opt.breakindent = true
+vim.opt.linebreak = true
